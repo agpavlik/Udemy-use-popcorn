@@ -1,6 +1,6 @@
 # Use Popcorn
 
-Practice with component composition with `children` and `explicit prop`.
+Practice with component composition with `children`, `explicit prop`, `useEffect`, `fetch`.
 !["Demo"](/public/demo20.gif)
 
 Building a Reusable `Star Rating` Component
