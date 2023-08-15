@@ -360,6 +360,19 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
     [selectedId]
   );
 
+  // Change the title of page with movie title
+  useEffect(
+    function () {
+      if (!title) return; // if it is undefind than return
+      document.title = `Movie | ${title}`;
+
+      return function () {
+        document.title = "usePopcorn"; // cleanup function
+      };
+    },
+    [title]
+  );
+
   return (
     <div className="details">
       {isLoading ? (
