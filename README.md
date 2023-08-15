@@ -1,6 +1,7 @@
 # Use Popcorn
 
-Practice with component composition with `children`, `explicit prop`. Add to application `useEffect`, `fetch`, `errors`.
+Practice with component composition with `children`, `explicit prop`. Practice with `useEffect`.
+
 !["Demo"](/public/demo20.gif)
 
 Building a Reusable `Star Rating` Component
