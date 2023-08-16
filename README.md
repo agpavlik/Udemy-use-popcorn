@@ -1,6 +1,8 @@
 # Use Popcorn
 
-Practice with component composition with `children`, `explicit prop`. Practice with `useEffect`.
+Practice with component composition use `children` and `explicit prop`.
+
+Practice with `useState`, `useEffect`, `localStorage`, `useRef` and `Custom Hooks (useMovies)`
 
 !["Demo"](/public/demo20.gif)
 
