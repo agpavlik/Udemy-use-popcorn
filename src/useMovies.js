@@ -4,14 +4,14 @@ import { useState, useEffect } from "react";
 
 const KEY = "f84fc31d";
 
-export function useMovies(query, callback) {
+export function useMovies(query) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(
     function () {
-      callback?.();
+      // callback?.();
 
       const controller = new AbortController(); // clean app fetch | clean app current request each time when new one comes in
 
