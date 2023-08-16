@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import StarRating from "./StarRating";
 import { useMovies } from "./useMovies";
+import { useLocalStorageState } from "./useLocalStorageState";
 
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
@@ -13,12 +14,7 @@ export default function App() {
 
   const { movies, isLoading, error } = useMovies(query);
 
-  // const [watched, setWatched] = useState([]);
-  // put the callback function in initial state
-  const [watched, setWatched] = useState(function () {
-    const storeValue = localStorage.getItem("watched"); // getItem
-    return JSON.parse(storeValue); // JSON.parse
-  });
+  const [watched, setWatched] = useLocalStorageState([], "watched");
 
   function handleSelectMovie(id) {
     setSelectedId((selectedId) => (id === selectedId ? null : id)); // close if click on the movie the second time
@@ -37,14 +33,6 @@ export default function App() {
   function handleDeleteWatched(id) {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
   }
-
-  // updated a watched movie
-  useEffect(
-    function () {
-      localStorage.setItem("watched", JSON.stringify(watched)); // JSON.stringify
-    },
-    [watched]
-  );
 
   return (
     <>
